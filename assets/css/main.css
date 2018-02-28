@@ -86,7 +86,7 @@ a {
     -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     transition: color 0.2s ease, border-bottom-color 0.2s ease;
-    border-bottom: dotted 1px;
+    /* border-bottom: dotted 1px; */
     color: inherit;
     text-decoration: none;
 }
@@ -1064,7 +1064,7 @@ body.is-menu-visible #menu {
     position: absolute;
     text-align: center;
     text-transform: uppercase;
-    width: 16em;
+    width: 17em;
     z-index: 1;
 }
 #banner .more:after {
@@ -1196,6 +1196,21 @@ body.is-mobile #main > header {
 }
 .inner img {
 	width: 100%;
+}
+.inner .actions img {
+    width: 1.5rem;
+}
+.inner .actions img:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.inner .actions img {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
 }
 /* Landing */
  body.landing #page-wrapper {
