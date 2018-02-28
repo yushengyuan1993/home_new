@@ -815,16 +815,24 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
 #menu ul > li > a {
     border: 0;
     color: inherit;
-    display: block;
+    /* display: block; */
     font-size: 0.8em;
     letter-spacing: 0.225em;
     outline: 0;
     text-decoration: none;
     text-transform: uppercase;
 }
+#menu ul > li > img {
+    width: 25px;
+    vertical-align: middle;
+}
 @media screen and (max-width: 736px) {
     #menu ul > li > a {
         line-height: 3em;
+    }
+    #menu ul > li > img {
+        width: 24px;
+        vertical-align: middle;
     }
 }
 #menu .close {
@@ -1060,7 +1068,7 @@ body.is-menu-visible #menu {
     z-index: 1;
 }
 #banner .more:after {
-    background-image: url("images/favicon.png");
+    background-image: url("images/email.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1108,9 +1116,9 @@ body.is-menu-visible #menu {
     #banner br {
         display: none;
     }
-    #banner .more {
+    /* #banner .more {
         display: none;
-    }
+    } */
 }
 body.is-loading #banner h2 {
     -moz-transform: scale(0.95);
