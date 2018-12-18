@@ -44,9 +44,9 @@ body {
  @-ms-viewport {
     width: device-width;
 }
-body {
+/* body {
     background: #2e3842;
-}
+} */
 body.is-loading *, body.is-loading *:before, body.is-loading *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
@@ -714,7 +714,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     padding-top: 3em;
 }
 #page-wrapper:before {
-    background: transparent;
+    /* background: transparent; */
     content:'';
     display: block;
     display: none;
@@ -805,9 +805,9 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
         padding: 3em 1.5em;
     }
 }
-body.is-menu-visible #page-wrapper {
+/* body.is-menu-visible #page-wrapper {
     opacity: 0.35;
-}
+} */
 body.is-menu-visible #page-wrapper:before {
     display: block;
 }
@@ -871,6 +871,10 @@ body.is-menu-visible #menu {
     height: 3.75em;
     vertical-align: top;
     width: 2em;
+}
+#header>.btn {
+    width: 3em;
+    height: 3em;
 }
 @media screen and (max-width: 736px) {
     #header nav > ul > li > a.menuToggle {
@@ -996,7 +1000,12 @@ body.is-menu-visible #menu {
     width: 17em;
     z-index: 1;
 }
-#banner .more:after {
+#banner .more>a {
+    display: inline-block;
+    width: 50%;
+    height: 66%;
+}
+#banner .more>a:after {
     background-image: url("../images/email.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -1082,38 +1091,29 @@ body #page-wrapper {
     padding-top: 0;
 }
 body #page-wrapper[data-st="1"] {
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic01.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic01.jpg");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic01.jpg");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic01.jpg");
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/5bb0c6a139c80b91b94b5557c5dbdaebb9a43f294f49-QdnZrh");
 }
 body #page-wrapper[data-st="2"] {
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic02.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic02.jpg");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic02.jpg");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic02.jpg");
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/1459ed52258675a7de495846be212789b9766753d859-jB6qXD");
 }
 body #page-wrapper[data-st="3"] {
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic03.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic03.jpg");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic03.jpg");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic03.jpg");
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/5f5d216cf5a92c435f9ea653f213aad730b7913881a6b-J3CMQG");
 }
 body #page-wrapper[data-st="4"] {
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic04.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic04.jpg");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic04.jpg");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic04.jpg");
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/631492a8012448a17cc3e95d72d3a6832077297e56fbb-wi1Y7f");
 }
 body #page-wrapper[data-st="5"] {
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic05.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic05.jpg");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic05.jpg");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic05.jpg");
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/2b246f52ada7b48c95a55762b4dc6eef64aea457779ff-sVzVkZ");
 }
 body #page-wrapper[data-st="6"] {
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic06.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic06.jpg");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic06.jpg");
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pic06.jpg");
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/e3b324a89e68ae0e926c4f2a8eb3484a9379abb976694-2sV77K");
+}
+body #page-wrapper[data-st="7"] {
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/7a03ad10b3e35101c67a3c1bc6ae29b3d52941cc5a3c2-U6H44v");
+}
+body #page-wrapper[data-st="8"] {
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/846b2de8e28217ceda269e4a5a9d8686dde28bd01dc8e-UBkBwH");
+}
+body #page-wrapper[data-st="9"] {
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("http://img.hb.aicdn.com/67de388cc9caa38ab7d8f36dcc1dcd4109db40733340b-yMzt3E");
 }
