@@ -794,7 +794,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     position: absolute;
     right: 0;
     top: 0;
-    background: url("../images/close.svg") no-repeat center/40%;
+    background: url("../images/close.svg") no-repeat center/35%;
     transition: all 0.3s ease-in-out;
 }
 #menu .close:hover {
