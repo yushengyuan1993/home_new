@@ -20,4 +20,5 @@ var skel=function(){"use strict";var t={breakpointIds:null,events:{},isInit:!1,o
 ///////////////////////////////////////////////////////////////////////
 var page_wrapper = document.querySelector('#page-wrapper');
 function switchBg () {page_wrapper.setAttribute('data-st', Math.floor(Math.random()*9+1))};switchBg();
+let timer = setInterval(switchBg, 6000)
 document.querySelector('#btn-switch').onclick=function(){switchBg()}
