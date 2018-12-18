@@ -547,83 +547,32 @@ ul.icons.major li {
         padding: 0 1em !important;
     }
 }
-ul.actions {
-    cursor: default;
-    list-style: none;
-    padding-left: 0;
-}
-ul.actions li {
+.actions>a {
     display: inline-block;
-    padding: 0 1.5em 0 0;
-    vertical-align: middle;
+    width: 1.5rem;
+    height: 1.5rem;
 }
-ul.actions li:last-child {
-    padding-right: 0;
+.actions>[title="blog"] {
+    background: url('../../images/blogger.png') no-repeat center/100% 100%;
 }
-ul.actions.small li {
-    padding: 0 0.75em 0 0;
+.actions>[title="github"] {
+    margin: 0 0.8rem;
+    background: url('../../images/github1.png') no-repeat center/100% 100%;
 }
-ul.actions.vertical li {
-    display: block;
-    padding: 1.5em 0 0 0;
+.actions>[title="project"] {
+    background: url('../../images/project0.png') no-repeat center/100% 100%;
 }
-ul.actions.vertical li:first-child {
-    padding-top: 0;
+.inner .actions a:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
-ul.actions.vertical li > * {
-    margin-bottom: 0;
-}
-ul.actions.vertical.small li {
-    padding: 0.75em 0 0 0;
-}
-ul.actions.vertical.small li:first-child {
-    padding-top: 0;
-}
-ul.actions.fit {
-    display: table;
-    margin-left: -1.5em;
-    padding: 0;
-    table-layout: fixed;
-    width: calc(100% + 1.5em);
-}
-ul.actions.fit li {
-    display: table-cell;
-    padding: 0 0 0 1.5em;
-}
-ul.actions.fit li > * {
-    margin-bottom: 0;
-}
-ul.actions.fit.small {
-    margin-left: -0.75em;
-    width: calc(100% + 0.75em);
-}
-ul.actions.fit.small li {
-    padding: 0 0 0 0.75em;
-}
-@media screen and (max-width: 736px) {
-    ul.actions li {
-        display: block;
-        padding: 1em 0 0 0;
-        text-align: center;
-        width: 100%;
-    }
-    ul.actions li:first-child {
-        padding-top: 0;
-    }
-    ul.actions li > * {
-        margin: 0 auto !important;
-        max-width: 30em;
-        width: 100%;
-    }
-    ul.actions li > *.icon:before {
-        margin-left: -1em;
-    }
-    ul.actions.small li {
-        padding: 0.5em 0 0 0;
-    }
-    ul.actions.small li:first-child {
-        padding-top: 0;
-    }
+.inner .actions a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 dl {
     margin: 0 0 2em 0;
@@ -1196,21 +1145,6 @@ body.is-mobile #main > header {
 }
 .inner img {
 	width: 100%;
-}
-.inner .actions img {
-    width: 1.5rem;
-}
-.inner .actions img:hover {
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-}
-.inner .actions img {
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    transition: all 0.3s;
 }
 /* Landing */
  body.landing #page-wrapper {
