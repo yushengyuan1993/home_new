@@ -876,6 +876,17 @@ body.is-menu-visible #menu {
     width: 3em;
     height: 3em;
     cursor: pointer;
+    background: url('../images/switch.png') no-repeat center/50%;
+    opacity: 0;
+    animation: opacity1 2s linear infinite alternate 3s;
+}
+@keyframes opacity1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+    }
 }
 @media screen and (max-width: 736px) {
     #header nav > ul > li > a.menuToggle {
@@ -1102,37 +1113,40 @@ body.is-loading #banner:after {
     }
 }
 #page-wrapper[data-st="1"] {
-    background-image: url("http://img.hb.aicdn.com/75610a08ca8f19a51994e781474acf473295b5d1159b3a-4WvPUd");
+    background-image: url("http://img.hb.aicdn.com/34650541807da2cc9da1c6c22c3265f12c260f8b439e9-tTffxI");
 }
 #page-wrapper[data-st="2"] {
-    background-image: url("http://img.hb.aicdn.com/1ccca52444cf701491aa3106bfe21093b9d1b40f1d8551-e38kCe");
+    background-image: url("http://img.hb.aicdn.com/82226e7984d71c3090e5042d657a578a75e9b89686205-BrnIcC");
 }
 #page-wrapper[data-st="3"] {
-    background-image: url("http://img.hb.aicdn.com/e919a2a41222f3f26caf1c213fefda9bc43e0c3022e6ce-8AiRFU");
+    background-image: url("http://img.hb.aicdn.com/c1f9fb12a054362e4ef34f9f34ad110a1478afc470f7e-7JQPbl");
 }
 #page-wrapper[data-st="4"] {
-    background-image: url("http://img.hb.aicdn.com/69ab2bd815a286c917ff9eceb2711c997d3711fd1345c9-1FMdjp");
+    background-image: url("http://img.hb.aicdn.com/7f80266a8e0392c15295b5a9f8f98a1812ee69a4173449-hfs5MB");
 }
 #page-wrapper[data-st="5"] {
-    background-image: url("http://img.hb.aicdn.com/1041bc64e52cf2f05eaeae5f063578329c42506f21813d-9SZVdD");
+    background-image: url("http://img.hb.aicdn.com/f11f071a8f43715017d3f1bf4238adea4779dcb07eac8-faMxaQ");
 }
 #page-wrapper[data-st="6"] {
-    background-image: url("http://img.hb.aicdn.com/0bfb57e19f2f605356c03e47493c36077385b7ff6e5ae-QP5XCR");
+    background-image: url("http://img.hb.aicdn.com/ccb87ed6624158aa35da76c015c2f0eafba7b80928ef8-gLgeG5");
 }
 #page-wrapper[data-st="7"] {
-    background-image: url("http://img.hb.aicdn.com/d016e226c7584072a14313c713a4f94d80db6c571f71e-1Pql3k");
+    background-image: url("http://img.hb.aicdn.com/547d8660d7ff243d06d83ae977738c5a652511212a7b8-rvfReI");
 }
 #page-wrapper[data-st="8"] {
-    background-image: url("http://img.hb.aicdn.com/5b185c971bc02551ae7fdafa77accacf4b064974708d0-oL5IBV");
+    background-image: url("http://img.hb.aicdn.com/195de746e8c96d9f56cb61d0ed4b33445fae75181a6ea-chpzwH");
 }
 #page-wrapper[data-st="9"] {
-    background-image: url("http://img.hb.aicdn.com/a2964c2f9c197b432ee51fc2f732554fe7f29c8922c72-Iuh8UZ");
+    background-image: url("http://img.hb.aicdn.com/6044b2f376fb9a5961203881b953f6f36bd35d35650ec-BobbeH");
 }
 #page-wrapper[data-st="10"] {
-    background-image: url("http://img.hb.aicdn.com/27a47c86e4cb0fc2721ec798912e23f23d706959f126c-UodZmV");
+    background-image: url("http://img.hb.aicdn.com/3b12f62853fb39d34178639f51e60c139c562cc920036-tHPpQe");
 }
 #page-wrapper[data-st="11"] {
-    background-image: url("http://img.hb.aicdn.com/9dc706fd4181f6f796efaf5e61027e78275444a62f0d4-75kXmq");
+    background-image: url("http://img.hb.aicdn.com/95b8b053c0b115f6deb7fe44399f5d5acead1b5b15379e-CnHgag");
+}
+#page-wrapper[data-st="12"] {
+    background-image: url("http://img.hb.aicdn.com/8eb2ef1388b450bdb8414641f7e5dd1136f25345e0c9f-3hwpCR");
 }
 
 .preload-img {
@@ -1140,15 +1154,16 @@ body.is-loading #banner:after {
     top: -1000em;
     left: -1000em;
     background: 
-    url("http://img.hb.aicdn.com/75610a08ca8f19a51994e781474acf473295b5d1159b3a-4WvPUd") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/27a47c86e4cb0fc2721ec798912e23f23d706959f126c-UodZmV") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/e919a2a41222f3f26caf1c213fefda9bc43e0c3022e6ce-8AiRFU") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/69ab2bd815a286c917ff9eceb2711c997d3711fd1345c9-1FMdjp") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/9dc706fd4181f6f796efaf5e61027e78275444a62f0d4-75kXmq") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/0bfb57e19f2f605356c03e47493c36077385b7ff6e5ae-QP5XCR") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/d016e226c7584072a14313c713a4f94d80db6c571f71e-1Pql3k") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/5b185c971bc02551ae7fdafa77accacf4b064974708d0-oL5IBV") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/a2964c2f9c197b432ee51fc2f732554fe7f29c8922c72-Iuh8UZ") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/1ccca52444cf701491aa3106bfe21093b9d1b40f1d8551-e38kCe") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/1041bc64e52cf2f05eaeae5f063578329c42506f21813d-9SZVdD") no-repeat center/0%;
+    url("http://img.hb.aicdn.com/34650541807da2cc9da1c6c22c3265f12c260f8b439e9-tTffxI") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/3b12f62853fb39d34178639f51e60c139c562cc920036-tHPpQe") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/c1f9fb12a054362e4ef34f9f34ad110a1478afc470f7e-7JQPbl") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/7f80266a8e0392c15295b5a9f8f98a1812ee69a4173449-hfs5MB") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/95b8b053c0b115f6deb7fe44399f5d5acead1b5b15379e-CnHgag") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/ccb87ed6624158aa35da76c015c2f0eafba7b80928ef8-gLgeG5") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/547d8660d7ff243d06d83ae977738c5a652511212a7b8-rvfReI") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/195de746e8c96d9f56cb61d0ed4b33445fae75181a6ea-chpzwH") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/6044b2f376fb9a5961203881b953f6f36bd35d35650ec-BobbeH") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/82226e7984d71c3090e5042d657a578a75e9b89686205-BrnIcC") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/f11f071a8f43715017d3f1bf4238adea4779dcb07eac8-faMxaQ") no-repeat center/0%,
+    url("http://img.hb.aicdn.com/8eb2ef1388b450bdb8414641f7e5dd1136f25345e0c9f-3hwpCR") no-repeat center/0%;
 }

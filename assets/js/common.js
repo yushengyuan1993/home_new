@@ -19,11 +19,11 @@ var skel=function(){"use strict";var t={breakpointIds:null,events:{},isInit:!1,o
 
 ///////////////////////////////////////////////////////////////////////
 $(function() {
-  var _index = Math.floor(Math.random()*11+1);
+  var _index = Math.floor(Math.random()*12+1);
   var page_wrapper = document.querySelector('#page-wrapper');
   var timer;
   function switchBg (t) {
-    if (_index > 8) {
+    if (_index > 11) {
       _index = 1
     } else {
       _index += 1;
