@@ -18,7 +18,24 @@ var skel=function(){"use strict";var t={breakpointIds:null,events:{},isInit:!1,o
 (function(a){skel.breakpoints({xlarge:"(max-width: 1680px)",large:"(max-width: 1280px)",medium:"(max-width: 980px)",small:"(max-width: 736px)",xsmall:"(max-width: 480px)"});a(function(){var f=a(window),e=a("body"),b=a("#page-wrapper"),d=a("#banner"),c=a("#header");e.addClass("is-loading");f.on("load",function(){window.setTimeout(function(){e.removeClass("is-loading")},100)});if(skel.vars.mobile){e.addClass("is-mobile")}else{skel.on("-medium !medium",function(){e.removeClass("is-mobile")}).on("+medium",function(){e.addClass("is-mobile")})}skel.on("+medium -medium",function(){a.prioritize(".important\\28 medium\\29",skel.breakpoint("medium").active)});a(".scrolly").scrolly({speed:1500,offset:c.outerHeight()});a("#menu").append('<a href="#menu" class="close"></a>').appendTo(e).panel({delay:500,hideOnClick:true,hideOnSwipe:true,resetScroll:true,resetForms:true,side:"right",target:e,visibleClass:"is-menu-visible"});if(skel.vars.IEVersion<9){c.removeClass("alt")}if(d.length>0&&c.hasClass("alt")){f.on("resize",function(){f.trigger("scroll")});d.scrollex({bottom:c.outerHeight()+1,terminate:function(){c.removeClass("alt")},enter:function(){c.addClass("alt")},leave:function(){c.removeClass("alt")}})}})})(jQuery);
 
 ///////////////////////////////////////////////////////////////////////
-var page_wrapper = document.querySelector('#page-wrapper');
-function switchBg () {page_wrapper.setAttribute('data-st', Math.floor(Math.random()*9+1))};switchBg();
-let timer = setInterval(switchBg, 6000)
-document.querySelector('#btn-switch').onclick=function(){switchBg()}
+$(function() {
+  var _index = Math.floor(Math.random()*11+1);
+  var page_wrapper = document.querySelector('#page-wrapper');
+  var timer;
+  function switchBg (t) {
+    if (_index > 8) {
+      _index = 1
+    } else {
+      _index += 1;
+    }
+    page_wrapper.dataset.st = _index;
+    
+    clearInterval(timer);
+    timer = setInterval(switchBg, !!t?18000:15000);
+  };
+  switchBg(1);
+
+  document.querySelector('#btn-switch').onclick=function(e){
+    switchBg();
+  };
+})
