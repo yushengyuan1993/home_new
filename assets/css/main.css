@@ -1113,40 +1113,40 @@ body.is-loading #banner:after {
     }
 }
 #page-wrapper[data-st="1"] {
-    background-image: url("http://img.hb.aicdn.com/34650541807da2cc9da1c6c22c3265f12c260f8b439e9-tTffxI");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/10.jpg");
 }
 #page-wrapper[data-st="2"] {
-    background-image: url("http://img.hb.aicdn.com/82226e7984d71c3090e5042d657a578a75e9b89686205-BrnIcC");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/11.jpg");
 }
 #page-wrapper[data-st="3"] {
-    background-image: url("http://img.hb.aicdn.com/c1f9fb12a054362e4ef34f9f34ad110a1478afc470f7e-7JQPbl");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/12.jpg");
 }
 #page-wrapper[data-st="4"] {
-    background-image: url("http://img.hb.aicdn.com/7f80266a8e0392c15295b5a9f8f98a1812ee69a4173449-hfs5MB");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/13.jpg");
 }
 #page-wrapper[data-st="5"] {
-    background-image: url("http://img.hb.aicdn.com/f11f071a8f43715017d3f1bf4238adea4779dcb07eac8-faMxaQ");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/14.jpg");
 }
 #page-wrapper[data-st="6"] {
-    background-image: url("http://img.hb.aicdn.com/ccb87ed6624158aa35da76c015c2f0eafba7b80928ef8-gLgeG5");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/15.jpg");
 }
 #page-wrapper[data-st="7"] {
-    background-image: url("http://img.hb.aicdn.com/547d8660d7ff243d06d83ae977738c5a652511212a7b8-rvfReI");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/16.jpg");
 }
 #page-wrapper[data-st="8"] {
-    background-image: url("http://img.hb.aicdn.com/195de746e8c96d9f56cb61d0ed4b33445fae75181a6ea-chpzwH");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/17.jpg");
 }
 #page-wrapper[data-st="9"] {
-    background-image: url("http://img.hb.aicdn.com/6044b2f376fb9a5961203881b953f6f36bd35d35650ec-BobbeH");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/18.jpg");
 }
 #page-wrapper[data-st="10"] {
-    background-image: url("http://img.hb.aicdn.com/3b12f62853fb39d34178639f51e60c139c562cc920036-tHPpQe");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/19.jpg");
 }
 #page-wrapper[data-st="11"] {
-    background-image: url("http://img.hb.aicdn.com/95b8b053c0b115f6deb7fe44399f5d5acead1b5b15379e-CnHgag");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/20.jpg");
 }
 #page-wrapper[data-st="12"] {
-    background-image: url("http://img.hb.aicdn.com/8eb2ef1388b450bdb8414641f7e5dd1136f25345e0c9f-3hwpCR");
+    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/21.jpg");
 }
 
 .preload-img {
@@ -1154,16 +1154,16 @@ body.is-loading #banner:after {
     top: -1000em;
     left: -1000em;
     background: 
-    url("http://img.hb.aicdn.com/34650541807da2cc9da1c6c22c3265f12c260f8b439e9-tTffxI") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/3b12f62853fb39d34178639f51e60c139c562cc920036-tHPpQe") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/c1f9fb12a054362e4ef34f9f34ad110a1478afc470f7e-7JQPbl") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/7f80266a8e0392c15295b5a9f8f98a1812ee69a4173449-hfs5MB") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/95b8b053c0b115f6deb7fe44399f5d5acead1b5b15379e-CnHgag") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/ccb87ed6624158aa35da76c015c2f0eafba7b80928ef8-gLgeG5") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/547d8660d7ff243d06d83ae977738c5a652511212a7b8-rvfReI") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/195de746e8c96d9f56cb61d0ed4b33445fae75181a6ea-chpzwH") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/6044b2f376fb9a5961203881b953f6f36bd35d35650ec-BobbeH") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/82226e7984d71c3090e5042d657a578a75e9b89686205-BrnIcC") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/f11f071a8f43715017d3f1bf4238adea4779dcb07eac8-faMxaQ") no-repeat center/0%,
-    url("http://img.hb.aicdn.com/8eb2ef1388b450bdb8414641f7e5dd1136f25345e0c9f-3hwpCR") no-repeat center/0%;
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/10.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/11.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/12.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/13.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/14.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/15.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/16.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/17.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/18.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/19.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/20.jpg") no-repeat center/0%,
+    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/21.jpg") no-repeat center/0%;
 }
