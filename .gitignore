@@ -13,3 +13,4 @@ resources/sass/.sass-cache/
 
 *.crt
 *.key
+*.pem
