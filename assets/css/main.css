@@ -1169,7 +1169,7 @@ body.is-loading #banner:after {
 }
 .footer {
     position: fixed;
-    bottom: 5px;
+    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1178,5 +1178,5 @@ body.is-loading #banner:after {
 }
 .footer a {
     font-size: 10px;
-    color: #00f0ff;
+    color: rgba(255, 255, 255, 0.7);
 }
