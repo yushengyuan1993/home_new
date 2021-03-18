@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Notes.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<ul>
+<li><a href="#01-new%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88">01. new操作符做了什么</a></li>
+<li><a href="#02-script%E6%A0%87%E7%AD%BE%E7%9A%84defer%E5%B1%9E%E6%80%A7%E5%92%8Casync%E5%B1%9E%E6%80%A7">02. script标签的defer属性和async属性</a></li>
+<li><a href="#03-%E6%89%8B%E5%86%99%E9%98%B2%E6%8A%96debounce%E5%92%8C%E8%8A%82%E6%B5%81throttle">03. 手写防抖debounce和节流throttle</a></li>
+<li><a href="#04-%E6%89%8B%E5%86%99promise">04. 手写Promise</a></li>
+<li><a href="#05-%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%AF%94%E5%A6%82%E8%BE%93%E5%85%A59999999%E8%BE%93%E5%87%BA9999999">05. 手写数字格式化，比如输入9999999，输出9,999,999</a></li>
+<li><a href="#06-%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AAsleep%E5%87%BD%E6%95%B0">06. 手写一个sleep函数</a></li>
+<li><a href="#07-%E6%89%8B%E5%86%99callapply%E5%92%8Cbind">07. 手写call、apply和bind</a></li>
+<li><a href="#08-%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A">08. 手写一个双向数据绑定</a></li>
+<li><a href="#09-%E6%89%8B%E5%86%99%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D">09. 手写浅拷贝和深拷贝</a></li>
+</ul>
+<h2 id="01-new%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88">01. new操作符做了什么</h2>
+<blockquote>
+<p><code>new</code> 共经历了四个过程。</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> Fn = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ };
+<span class="hljs-keyword">var</span> fnObj = <span class="hljs-keyword">new</span> Fn();
+</div></code></pre>
+<ol>
+<li>创建一个空对象</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+</div></code></pre>
+<ol start="2">
+<li>设置原型链</li>
+</ol>
+<pre class="hljs"><code><div>obj.__proto__ = Fn.prototype;
+</div></code></pre>
+<ol start="3">
+<li>让Fn的this指向obj，并执行Fn的函数体</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> result = Fn.call(obj);
+</div></code></pre>
+<ol start="4">
+<li>判断Fn的返回值类型，如果是值类型，就返回obj。如果是引用类型，就返回这个引用类型的对象</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> result === <span class="hljs-string">'object'</span>) {
+  fnObj = result;
+} <span class="hljs-keyword">else</span> {
+  fnObj = obj;
+}
+<span class="hljs-comment">// return typeof result === 'object' ? result : obj;</span>
+</div></code></pre>
+<h2 id="02-script%E6%A0%87%E7%AD%BE%E7%9A%84defer%E5%B1%9E%E6%80%A7%E5%92%8Casync%E5%B1%9E%E6%80%A7">02. script标签的defer属性和async属性</h2>
+<ol>
+<li>当HTML页面解析到以下标签时：</li>
+</ol>
+<ul>
+<li><code>&lt;script&gt;</code>，脚本没有 defer 或 async，浏览器会立即加载并执行指定的脚本，也就是说不等待后续载入的文档元素，读到就加载并执行。执行结束后，HTML解析继续。</li>
+<li><code>&lt;script defer&gt;</code>，defer 属性表示延迟执行引入的 JavaScript，即这段 JavaScript 加载时 HTML 并未停止解析，这两个过程是并行的。当整个 document 解析完毕后再执行脚本文件，在 DOMContentLoaded 事件触发之前完成。多个脚本按顺序执行。</li>
+<li><code>&lt;script async&gt;</code>，async 属性表示异步执行引入的 JavaScript，与 defer 的区别在于，如果已经加载好，就会开始执行，也就是说它的执行仍然会阻塞文档的解析，只是它的加载过程不会阻塞。多个脚本的执行顺序无法保证。</li>
+</ul>
+<p>注意，在没有src属性的情况下，async和defer属性会被忽略。</p>
+<ol start="2">
+<li>延伸问题，为何把CSS<code>&lt;link&gt;</code>标签放在<code>&lt;head&gt;&lt;/head&gt;</code>之间，把JS<code>&lt;script&gt;</code>标签放在<code>&lt;/body&gt;</code>之前？</li>
+</ol>
+<ul>
+<li>
+<p><strong>把<code>&lt;link&gt;</code>标签放在<code>&lt;head&gt;&lt;/head&gt;</code>之间</strong></p>
+<p>把<code>&lt;link&gt;</code>标签放在<code>&lt;head&gt;&lt;/head&gt;</code>之间是规范要求如此。另外，这种写法可以让页面有序的逐步呈现，提高了用户体验。如果将样式文件放在文档底部，会造成HTML的样式渲染延后，用户可能会看到空白页或者一堆没有样式的页面。</p>
+</li>
+<li>
+<p><strong>把<code>&lt;script&gt;</code>标签恰好放在<code>&lt;/body&gt;</code>之前</strong></p>
+<p>脚本在下载和执行期间会阻止HTML的解析。把<code>&lt;script&gt;</code>标签放在底部，能保证HTML首先完成解析，将页面内容尽早呈现给用户。</p>
+<p>但是，当脚本里包含<code>document.write()</code>时，不应放在底部，但是现在规范要求不使用<code>document.write()</code>。同时，将<code>&lt;script&gt;</code>标签放在底部时，在整个文档（<code>document</code>）被解析之前，浏览器不会开始下载脚本。也许，一个比较好的方法是，在<code>&lt;script&gt;</code>添加<code>defer</code>属性，然后将其放在<code>&lt;head&gt;</code>标签中。</p>
+</li>
+</ul>
+<h2 id="03-%E6%89%8B%E5%86%99%E9%98%B2%E6%8A%96debounce%E5%92%8C%E8%8A%82%E6%B5%81throttle">03. 手写防抖debounce和节流throttle</h2>
+<ol>
+<li>防抖debounce</li>
+</ol>
+<ul>
+<li>原理：在事件被触发的n秒后再执行回调，如果在这n秒内又被触发，则重新计时。</li>
+<li>适用场景：
+<ol>
+<li>按钮提交：防止多次提交，至执行最后一次提交动作；</li>
+<li>搜索联想：防止联想发送请求，只发送最后一次输入的请求。</li>
+</ol>
+</li>
+<li>简易版实现：<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">debounce</span>(<span class="hljs-params">func, wait, immediate</span>) </span>{
+  <span class="hljs-keyword">let</span> timeout = <span class="hljs-literal">null</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">const</span> args = <span class="hljs-built_in">arguments</span>;
+    
+    <span class="hljs-keyword">if</span> (timeout) clearTimeout(timeout);
+
+    <span class="hljs-keyword">if</span> (immediate) {
+      <span class="hljs-keyword">const</span> callNow = !timeout;
+      timeout = setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        timeout = <span class="hljs-literal">null</span>
+      }, wait);
+
+      <span class="hljs-keyword">if</span> (callNow) func.apply(that, args);
+    } <span class="hljs-keyword">else</span> {
+      timeout = setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        func.apply(that, args);
+      }, wait);
+    }
+  }
+}
+</div></code></pre>
+</li>
+</ul>
+<ol start="2">
+<li>节流throttle</li>
+</ol>
+<ul>
+<li>原理：规定在一个单位时间内，只能触发一次函数，如果这个单位时间内出发了多次函数，则只有一次生效。</li>
+<li>适用场景：
+<ol>
+<li>拖拽场景：固定时间内值触发一次，避免短时间内高频触发</li>
+<li>缩放场景：浏览器窗口的 resize</li>
+</ol>
+</li>
+<li>简易版实现：<pre class="hljs"><code><div><span class="hljs-comment">// 1. 使用时间戳</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">throttle</span>(<span class="hljs-params">func, wait</span>) </span>{
+  <span class="hljs-keyword">let</span> that, args;
+  <span class="hljs-keyword">let</span> previous = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> now = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    that = <span class="hljs-keyword">this</span>;
+    args = <span class="hljs-built_in">arguments</span>;
+
+    <span class="hljs-keyword">if</span> (now - previous &gt; wait) {
+      func.apply(that, args);
+      previous = now;
+    }
+  }
+}
+
+<span class="hljs-comment">// 2. 使用定时器</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">throttle</span>(<span class="hljs-params">func, wait</span>) </span>{
+  <span class="hljs-keyword">let</span> timeout = <span class="hljs-literal">null</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">const</span> args = <span class="hljs-built_in">arguments</span>;
+
+    <span class="hljs-keyword">if</span> (!timeout) {
+      timeout = setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        timeout = <span class="hljs-literal">null</span>;
+        func.apply(that, args);
+      }, wait);
+    }
+  }
+}
+</div></code></pre>
+</li>
+</ul>
+<h2 id="04-%E6%89%8B%E5%86%99promise">04. 手写Promise</h2>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myPromise</span>(<span class="hljs-params">constructor</span>) </span>{
+  <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>;
+  that.status = <span class="hljs-string">"pending"</span>; <span class="hljs-comment">// 定义状态改变前的初始状态</span>
+  that.value = <span class="hljs-literal">undefined</span>;  <span class="hljs-comment">// 定义状态为resolved的时候的状态</span>
+  that.reason = <span class="hljs-literal">undefined</span>; <span class="hljs-comment">// 定义状态为rejected的时候的状态</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resolve</span>(<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-comment">// 两个==="pending"，保证了状态的改变是不可逆的</span>
+    <span class="hljs-keyword">if</span> (that.status === <span class="hljs-string">"pending"</span>) {
+      that.value = value;
+      that.status = <span class="hljs-string">"resolved"</span>;
+    }
+  }
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reject</span>(<span class="hljs-params">reason</span>) </span>{
+    <span class="hljs-comment">// 两个==="pending"，保证了状态的改变是不可逆的</span>
+    <span class="hljs-keyword">if</span> (that.status === <span class="hljs-string">"pending"</span>) {
+      that.reason = reason;
+      that.status = <span class="hljs-string">"rejected"</span>;
+    }
+  }
+  <span class="hljs-comment">// 捕获构造异常</span>
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">constructor</span>(resolve, reject);
+  } catch (e) {
+    reject(e);
+  }
+}
+myPromise.prototype.then = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">onFullfilled, onRejected</span>) </span>{
+  <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>;
+  <span class="hljs-keyword">switch</span> (that.status) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"resolved"</span>: onFullfilled(that.value); <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"rejected"</span>: onRejected(that.reason); <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>: 
+  }
+}
+
+<span class="hljs-comment">// 测试</span>
+<span class="hljs-keyword">const</span> p = <span class="hljs-keyword">new</span> myPromise(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span>) {
+    resolve(<span class="hljs-string">'success'</span>);
+  } <span class="hljs-keyword">else</span> {
+    reject(<span class="hljs-string">'fail'</span>);
+  }
+});
+p.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(x);
+}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">y</span>) </span>{
+  <span class="hljs-built_in">console</span>.error(y);
+});
+</div></code></pre>
+<h2 id="05-%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%AF%94%E5%A6%82%E8%BE%93%E5%85%A59999999%E8%BE%93%E5%87%BA9999999">05. 手写数字格式化，比如输入9999999，输出9,999,999</h2>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatNumber</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-comment">//str.split('').reverse() =&gt; ["0", "9", "8", "7", "6", "5", "4", "3", "2", "1"]</span>
+  <span class="hljs-keyword">return</span> num.toString().split(<span class="hljs-string">''</span>).reverse().reduce(<span class="hljs-function">(<span class="hljs-params">prev,next,index</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> ((index % <span class="hljs-number">3</span>) ? next : (next + <span class="hljs-string">','</span>)) + prev;
+  })
+}
+
+<span class="hljs-built_in">console</span>.log(formatNumber(<span class="hljs-number">1234567890</span>)); <span class="hljs-comment">// 1,234,567,890</span>
+</div></code></pre>
+<h2 id="06-%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AAsleep%E5%87%BD%E6%95%B0">06. 手写一个sleep函数</h2>
+<ul>
+<li>Promise 实现<pre class="hljs"><code><div><span class="hljs-keyword">const</span> sleep = <span class="hljs-function"><span class="hljs-params">time</span> =&gt;</span> {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> setTimeout(resolve, time));
+}
+sleep(<span class="hljs-number">1000</span>).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>);
+})
+</div></code></pre>
+</li>
+<li>async 实现<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sleep</span>(<span class="hljs-params">time</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> setTimeout(resolve, time))
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">output</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> out = <span class="hljs-keyword">await</span> sleep(<span class="hljs-number">1000</span>);
+  
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>);
+  <span class="hljs-comment">//return out;</span>
+}
+
+output();
+</div></code></pre>
+</li>
+<li>ES5 实现<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sleep</span>(<span class="hljs-params">callback, time</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> callback === <span class="hljs-string">'function'</span>) {
+    setTimeout(callback, time);
+  }
+}
+
+sleep(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>);
+}, <span class="hljs-number">1000</span>);
+</div></code></pre>
+</li>
+</ul>
+<h2 id="07-%E6%89%8B%E5%86%99callapply%E5%92%8Cbind">07. 手写call、apply和bind</h2>
+<ul>
+<li>call<pre class="hljs"><code><div><span class="hljs-built_in">Function</span>.prototype.myCall = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
+  <span class="hljs-comment">// 判断调用对象</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-keyword">this</span> !== <span class="hljs-string">"function"</span>) {
+    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">"type error"</span>);
+  }
+
+  <span class="hljs-comment">// 获取参数</span>
+  <span class="hljs-keyword">let</span> args = [...arguments].slice(<span class="hljs-number">1</span>),
+    result = <span class="hljs-literal">null</span>;
+
+  <span class="hljs-comment">// 判断 context 是否传入，如果未传入则设置为 window</span>
+  context = context || <span class="hljs-built_in">window</span>;
+
+  <span class="hljs-comment">// 将调用函数设为对象的方法</span>
+  context.fn = <span class="hljs-keyword">this</span>;
+
+  <span class="hljs-comment">// 调用函数</span>
+  result = context.fn(...args);
+
+  <span class="hljs-comment">// 将属性删除</span>
+  <span class="hljs-keyword">delete</span> context.fn;
+
+  <span class="hljs-keyword">return</span> result;
+};
+</div></code></pre>
+</li>
+<li>apply<pre class="hljs"><code><div><span class="hljs-built_in">Function</span>.prototype.myApply = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
+  <span class="hljs-comment">// 判断调用对象是否为函数</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-keyword">this</span> !== <span class="hljs-string">"function"</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">"Error"</span>);
+  }
+
+  <span class="hljs-keyword">let</span> result = <span class="hljs-literal">null</span>;
+
+  <span class="hljs-comment">// 判断 context 是否存在，如果未传入则为 window</span>
+  context = context || <span class="hljs-built_in">window</span>;
+
+  <span class="hljs-comment">// 将函数设为对象的方法</span>
+  context.fn = <span class="hljs-keyword">this</span>;
+
+  <span class="hljs-comment">// 调用方法</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>]) {
+    result = context.fn(...arguments[<span class="hljs-number">1</span>]);
+  } <span class="hljs-keyword">else</span> {
+    result = context.fn();
+  }
+
+  <span class="hljs-comment">// 将属性删除</span>
+  <span class="hljs-keyword">delete</span> context.fn;
+
+  <span class="hljs-keyword">return</span> result;
+};
+</div></code></pre>
+</li>
+<li>bind<pre class="hljs"><code><div><span class="hljs-built_in">Function</span>.prototype.myBind = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
+  <span class="hljs-comment">// 判断调用对象是否为函数</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-keyword">this</span> !== <span class="hljs-string">"function"</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">"Error"</span>);
+  }
+
+  <span class="hljs-comment">// 获取参数</span>
+  <span class="hljs-keyword">var</span> args = [...arguments].slice(<span class="hljs-number">1</span>),
+    fn = <span class="hljs-keyword">this</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Fn</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// 根据调用方式，传入不同绑定值</span>
+    <span class="hljs-keyword">return</span> fn.apply(
+      <span class="hljs-keyword">this</span> <span class="hljs-keyword">instanceof</span> Fn ? <span class="hljs-keyword">this</span> : context,
+      args.concat(...arguments)
+    );
+  };
+};
+</div></code></pre>
+</li>
+</ul>
+<h2 id="08-%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A">08. 手写一个双向数据绑定</h2>
+<ul>
+<li>HTML<pre class="hljs"><code><div>手机号： <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tel"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tel"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>输入的手机号为：<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"num"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>Object.defineProperty()<pre class="hljs"><code><div><span class="hljs-keyword">let</span> obj = {
+  <span class="hljs-attr">tel</span>: <span class="hljs-literal">null</span>
+};
+<span class="hljs-keyword">let</span> newObj = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-built_in">JSON</span>.stringify(obj));
+
+<span class="hljs-built_in">Object</span>.defineProperty(obj, <span class="hljs-string">'tel'</span>, {
+  <span class="hljs-keyword">get</span>() {
+    <span class="hljs-keyword">return</span> newObj.tel;
+  },
+  <span class="hljs-keyword">set</span>(val) {
+    <span class="hljs-keyword">if</span> (val === newObj.tel) <span class="hljs-keyword">return</span>;
+
+    newObj.tel = val;
+
+    observer();
+  }
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">observer</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'num'</span>).innerHTML = obj.tel;
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tel'</span>).val = obj.tel;
+}
+
+observer();
+
+setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  obj.tel = <span class="hljs-string">'15122222222'</span>;
+}, <span class="hljs-number">1000</span>);
+
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tel'</span>).oninput = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  obj.tel = <span class="hljs-keyword">this</span>.value;
+}
+</div></code></pre>
+</li>
+<li>Proxy<pre class="hljs"><code><div><span class="hljs-keyword">let</span> obj = {};
+
+obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(obj, {
+  <span class="hljs-keyword">get</span>(target, prop) {
+    <span class="hljs-keyword">return</span> target[prop];
+  },
+  <span class="hljs-keyword">set</span>(target, prop, value) {
+    target[prop] = value;
+    observer();
+  }
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">observer</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'num'</span>).innerHTML = obj.tel;
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tel'</span>).val = obj.tel;
+}
+
+observer();
+
+setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  obj.tel = <span class="hljs-string">'15122222222'</span>;
+}, <span class="hljs-number">1000</span>);
+
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tel'</span>).oninput = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  obj.tel = <span class="hljs-keyword">this</span>.value;
+}
+</div></code></pre>
+</li>
+</ul>
+<h2 id="09-%E6%89%8B%E5%86%99%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D">09. 手写浅拷贝和深拷贝</h2>
+<ul>
+<li>浅拷贝<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shallowCopy</span>(<span class="hljs-params">object</span>) </span>{
+  <span class="hljs-comment">// 只拷贝对象</span>
+  <span class="hljs-keyword">if</span> (!object || <span class="hljs-keyword">typeof</span> object !== <span class="hljs-string">"object"</span>) <span class="hljs-keyword">return</span>;
+
+  <span class="hljs-comment">// 根据 object 的类型判断是新建一个数组还是对象</span>
+  <span class="hljs-keyword">let</span> newObject = <span class="hljs-built_in">Array</span>.isArray(object) ? [] : {};
+
+  <span class="hljs-comment">// 遍历 object，并且判断是 object 的属性才拷贝</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> object) {
+    <span class="hljs-keyword">if</span> (object.hasOwnProperty(key)) {
+      newObject[key] = object[key];
+    }
+  }
+
+  <span class="hljs-keyword">return</span> newObject;
+}
+</div></code></pre>
+</li>
+<li>深拷贝<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepCopy</span>(<span class="hljs-params">object</span>) </span>{
+  <span class="hljs-keyword">if</span> (!object || <span class="hljs-keyword">typeof</span> object !== <span class="hljs-string">"object"</span>) <span class="hljs-keyword">return</span>;
+
+  <span class="hljs-keyword">let</span> newObject = <span class="hljs-built_in">Array</span>.isArray(object) ? [] : {};
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> object) {
+    <span class="hljs-keyword">if</span> (object.hasOwnProperty(key)) {
+      newObject[key] = <span class="hljs-keyword">typeof</span> object[key] === <span class="hljs-string">"object"</span> ? deepCopy(object[key]) : object[key];
+    }
+  }
+
+  <span class="hljs-keyword">return</span> newObject;
+}
+</div></code></pre>
+</li>
+</ul>
+
+</body>
+</html>
