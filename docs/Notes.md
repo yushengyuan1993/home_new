@@ -7,6 +7,7 @@
 - [07. 手写call、apply和bind](#07-手写callapply和bind)
 - [08. 手写一个双向数据绑定](#08-手写一个双向数据绑定)
 - [09. 手写浅拷贝和深拷贝](#09-手写浅拷贝和深拷贝)
+- [10. 手写函数柯里化](#10-手写函数柯里化)
 
 ## 01. new操作符做了什么
   > `new` 共经历了四个过程。
@@ -416,5 +417,41 @@
       }
 
       return newObject;
+    }
+    ```
+
+## 10. 手写函数柯里化
+  函数柯里化指的是一个函数，它接收函数 A，并且能返回一个新的函数，这个新的函数能够处理函数 A 的剩余参数。
+  - ES5实现
+    ```js
+    function curry(fn, args) {
+      // 获取函数需要的参数长度
+      let length = fn.length;
+
+      args = args || [];
+
+      return function() {
+        let subArgs = args.slice(0);
+
+        // 拼接得到现有的所有参数
+        for (let i = 0; i < arguments.length; i++) {
+          subArgs.push(arguments[i]);
+        }
+
+        // 判断参数的长度是否已经满足函数所需参数的长度
+        if (subArgs.length >= length) {
+          // 如果满足，执行函数
+          return fn.apply(this, subArgs);
+        } else {
+          // 如果不满足，递归返回柯里化的函数，等待参数的传入
+          return curry.call(this, fn, subArgs);
+        }
+      };
+    }
+    ```
+  - ES6实现
+    ```js
+    function curry(fn, ...args) {
+      return fn.length <= args.length ? fn(...args) : curry.bind(null, fn, ...args);
     }
     ```
