@@ -475,7 +475,7 @@ code {
 <li>节流throttle</li>
 </ol>
 <ul>
-<li>原理：规定在一个单位时间内，只能触发一次函数，如果这个单位时间内触发了多次函数，则只有一次生效。</li>
+<li>原理：规定在一个单位时间内，只能触发一次回调函数，如果这个单位时间内触发了多次回调函数，则只有一次生效。</li>
 <li>适用场景：
 <ol>
 <li>拖拽场景：固定时间内值触发一次，避免短时间内高频触发</li>
@@ -717,7 +717,7 @@ sleep(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</spa
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">observer</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'num'</span>).innerHTML = obj.tel;
-  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tel'</span>).val = obj.tel;
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tel'</span>).value = obj.tel;
 }
 
 observer();
@@ -745,7 +745,7 @@ obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</s
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">observer</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'num'</span>).innerHTML = obj.tel;
-  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tel'</span>).val = obj.tel;
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tel'</span>).value = obj.tel;
 }
 
 observer();

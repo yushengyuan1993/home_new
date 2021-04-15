@@ -90,7 +90,7 @@
     }
     ```
   2. 节流throttle
-  - 原理：规定在一个单位时间内，只能触发一次函数，如果这个单位时间内触发了多次函数，则只有一次生效。
+  - 原理：规定在一个单位时间内，只能触发一次回调函数，如果这个单位时间内触发了多次回调函数，则只有一次生效。
   - 适用场景：
     1. 拖拽场景：固定时间内值触发一次，避免短时间内高频触发
     2. 缩放场景：浏览器窗口的 resize
@@ -340,7 +340,7 @@
 
     function observer() {
       document.getElementById('num').innerHTML = obj.tel;
-      document.getElementById('tel').val = obj.tel;
+      document.getElementById('tel').value = obj.tel;
     }
 
     observer();
@@ -369,7 +369,7 @@
 
     function observer() {
       document.getElementById('num').innerHTML = obj.tel;
-      document.getElementById('tel').val = obj.tel;
+      document.getElementById('tel').value = obj.tel;
     }
 
     observer();
