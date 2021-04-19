@@ -781,13 +781,13 @@ setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;
 </div></code></pre>
 </li>
 <li>深拷贝<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepCopy</span>(<span class="hljs-params">object</span>) </span>{
-  <span class="hljs-keyword">if</span> (!object || <span class="hljs-keyword">typeof</span> object !== <span class="hljs-string">"object"</span>) <span class="hljs-keyword">return</span>;
+  <span class="hljs-keyword">if</span> (!object || <span class="hljs-keyword">typeof</span> object !== <span class="hljs-string">"object"</span>) <span class="hljs-keyword">return</span> object;
 
   <span class="hljs-keyword">let</span> newObject = <span class="hljs-built_in">Array</span>.isArray(object) ? [] : {};
 
   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> object) {
     <span class="hljs-keyword">if</span> (object.hasOwnProperty(key)) {
-      newObject[key] = <span class="hljs-keyword">typeof</span> object[key] === <span class="hljs-string">"object"</span> ? deepCopy(object[key]) : object[key];
+      newObject[key] = deepCopy(object[key]);
     }
   }
 
