@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hooks-intro.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><em>Hook</em> 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。</p>
+<pre class="hljs"><code><div>import React, { useState } from 'react';
+
+function Example() {
+  // 声明一个新的叫做 “count” 的 state 变量
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;You clicked {count} times&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Click me
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</div></code></pre>
+<p><code>useState</code> 是我们要学习的第一个 “Hook”，这个例子是简单演示。如果不理解也不用担心。</p>
+<p><strong>你将在<a href="/docs/hooks-overview.html">下一章节</a>正式开始学习 Hook。</strong> 这一章节，我们将会解释为什么会在 React 中加入 Hook，以及如何使用 Hook 写出更好的应用。</p>
+<blockquote>
+<p>注意</p>
+<p>React 16.8.0 是第一个支持 Hook 的版本。升级时，请注意更新所有的 package，包括 React DOM。
+React Native 从 <a href="https://reactnative.dev/blog/2019/03/12/releasing-react-native-059">0.59 版本</a>开始支持 Hook。</p>
+</blockquote>
+<h2 id="%E8%A7%86%E9%A2%91%E4%BB%8B%E7%BB%8D-video-introduction">视频介绍 {#video-introduction}</h2>
+<p>在 React Conf 2018 上，Sophie Alpert 和 Dan Abramov 介绍了 Hook，紧接着 Ryan Florence 演示了如何使用 Hook 重构应用。你可以在这里看到这个视频：</p>
+<br>
+<iframe width="650" height="366" src="//www.youtube.com/embed/dpw9EHDh2bM" frameborder="0" allowfullscreen></iframe>
+<h2 id="%E6%B2%A1%E6%9C%89%E7%A0%B4%E5%9D%8F%E6%80%A7%E6%94%B9%E5%8A%A8-no-breaking-changes">没有破坏性改动 {#no-breaking-changes}</h2>
+<p>在我们继续之前，请记住 Hook 是：</p>
+<ul>
+<li><strong>完全可选的。</strong> 你无需重写任何已有代码就可以在一些组件中尝试 Hook。但是如果你不想，你不必现在就去学习或使用 Hook。</li>
+<li><strong>100% 向后兼容的。</strong> Hook 不包含任何破坏性改动。</li>
+<li><strong>现在可用。</strong> Hook 已发布于 v16.8.0。</li>
+</ul>
+<p><strong>没有计划从 React 中移除 class。</strong> 你可以在本页<a href="#gradual-adoption-strategy">底部的章节</a>读到更多关于 Hook 的渐进策略。</p>
+<p><strong>Hook 不会影响你对 React 概念的理解。</strong> 恰恰相反，Hook 为已知的 React 概念提供了更直接的 API：props， state，context，refs 以及生命周期。稍后我们将看到，Hook 还提供了一种更强大的方式来组合他们。</p>
+<p><strong>如果不想了解添加 Hook 的具体原因，可以直接<a href="/docs/hooks-overview.html">跳到下一章节开始学习 Hook！</a></strong> 当然你也可以继续阅读这一章节来了解原因，并且可以学习到如何在不重写应用的情况下使用 Hook。</p>
+<h2 id="%E5%8A%A8%E6%9C%BA-motivation">动机 {#motivation}</h2>
+<p>Hook 解决了我们五年来编写和维护成千上万的组件时遇到的各种各样看起来不相关的问题。无论你正在学习 React，或每天使用，或者更愿尝试另一个和 React 有相似组件模型的框架，你都可能对这些问题似曾相识。</p>
+<h3 id="%E5%9C%A8%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E5%A4%8D%E7%94%A8%E7%8A%B6%E6%80%81%E9%80%BB%E8%BE%91%E5%BE%88%E9%9A%BE-its-hard-to-reuse-stateful-logic-between-components">在组件之间复用状态逻辑很难 {#its-hard-to-reuse-stateful-logic-between-components}</h3>
+<p>React 没有提供将可复用性行为“附加”到组件的途径（例如，把组件连接到 store）。如果你使用过 React 一段时间，你也许会熟悉一些解决此类问题的方案，比如 <a href="/docs/render-props.html">render props</a> 和 <a href="/docs/higher-order-components.html">高阶组件</a>。但是这类方案需要重新组织你的组件结构，这可能会很麻烦，使你的代码难以理解。如果你在 React DevTools 中观察过 React 应用，你会发现由 providers，consumers，高阶组件，render props 等其他抽象层组成的组件会形成“嵌套地狱”。尽管我们可以<a href="https://github.com/facebook/react-devtools/pull/503">在 DevTools 过滤掉它们</a>，但这说明了一个更深层次的问题：React 需要为共享状态逻辑提供更好的原生途径。</p>
+<p>你可以使用 Hook 从组件中提取状态逻辑，使得这些逻辑可以单独测试并复用。<strong>Hook 使你在无需修改组件结构的情况下复用状态逻辑。</strong> 这使得在组件间或社区内共享 Hook 变得更便捷。</p>
+<p>具体将在<a href="/docs/hooks-custom.html">自定义 Hook</a> 中对此展开更多讨论。</p>
+<h3 id="%E5%A4%8D%E6%9D%82%E7%BB%84%E4%BB%B6%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E7%90%86%E8%A7%A3-complex-components-become-hard-to-understand">复杂组件变得难以理解 {#complex-components-become-hard-to-understand}</h3>
+<p>我们经常维护一些组件，组件起初很简单，但是逐渐会被状态逻辑和副作用充斥。每个生命周期常常包含一些不相关的逻辑。例如，组件常常在 <code>componentDidMount</code> 和 <code>componentDidUpdate</code> 中获取数据。但是，同一个 <code>componentDidMount</code> 中可能也包含很多其它的逻辑，如设置事件监听，而之后需在 <code>componentWillUnmount</code> 中清除。相互关联且需要对照修改的代码被进行了拆分，而完全不相关的代码却在同一个方法中组合在一起。如此很容易产生 bug，并且导致逻辑不一致。</p>
+<p>在多数情况下，不可能将组件拆分为更小的粒度，因为状态逻辑无处不在。这也给测试带来了一定挑战。同时，这也是很多人将 React 与状态管理库结合使用的原因之一。但是，这往往会引入了很多抽象概念，需要你在不同的文件之间来回切换，使得复用变得更加困难。</p>
+<p>为了解决这个问题，<strong>Hook 将组件中相互关联的部分拆分成更小的函数（比如设置订阅或请求数据）</strong>，而并非强制按照生命周期划分。你还可以使用 reducer 来管理组件的内部状态，使其更加可预测。</p>
+<p>我们将在<a href="/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns">使用 Effect Hook</a> 中对此展开更多讨论。</p>
+<h3 id="%E9%9A%BE%E4%BB%A5%E7%90%86%E8%A7%A3%E7%9A%84-class-classes-confuse-both-people-and-machines">难以理解的 class {#classes-confuse-both-people-and-machines}</h3>
+<p>除了代码复用和代码管理会遇到困难外，我们还发现 class 是学习 React 的一大屏障。你必须去理解 JavaScript 中 <code>this</code> 的工作方式，这与其他语言存在巨大差异。还不能忘记绑定事件处理器。没有稳定的<a href="https://babeljs.io/docs/en/babel-plugin-transform-class-properties/">语法提案</a>，这些代码非常冗余。大家可以很好地理解 props，state 和自顶向下的数据流，但对 class 却一筹莫展。即便在有经验的 React 开发者之间，对于函数组件与 class 组件的差异也存在分歧，甚至还要区分两种组件的使用场景。</p>
+<p>另外，React 已经发布五年了，我们希望它能在下一个五年也与时俱进。就像 <a href="https://svelte.dev/">Svelte</a>，<a href="https://angular.io/">Angular</a>，<a href="https://glimmerjs.com/">Glimmer</a>等其它的库展示的那样，组件<a href="https://en.wikipedia.org/wiki/Ahead-of-time_compilation">预编译</a>会带来巨大的潜力。尤其是在它不局限于模板的时候。最近，我们一直在使用 <a href="https://prepack.io/">Prepack</a> 来试验 <a href="https://github.com/facebook/react/issues/7323">component folding</a>，也取得了初步成效。但是我们发现使用 class 组件会无意中鼓励开发者使用一些让优化措施无效的方案。class 也给目前的工具带来了一些问题。例如，class 不能很好的压缩，并且会使热重载出现不稳定的情况。因此，我们想提供一个使代码更易于优化的 API。</p>
+<p>为了解决这些问题，<strong>Hook 使你在非 class 的情况下可以使用更多的 React 特性。</strong> 从概念上讲，React 组件一直更像是函数。而 Hook 则拥抱了函数，同时也没有牺牲 React 的精神原则。Hook 提供了问题的解决方案，无需学习复杂的函数式或响应式编程技术。</p>
+<blockquote>
+<p>示例</p>
+<p><a href="/docs/hooks-overview.html">Hook 概览</a>是开始学习 Hook 的不错选择。</p>
+</blockquote>
+<h2 id="%E6%B8%90%E8%BF%9B%E7%AD%96%E7%95%A5-gradual-adoption-strategy">渐进策略 {#gradual-adoption-strategy}</h2>
+<blockquote>
+<p><strong>总结：没有计划从 React 中移除 class。</strong></p>
+</blockquote>
+<p>大部分 React 开发者会专注于开发产品，而没时间关注每一个新 API 的发布。Hook 还很新，也许等到有更多示例和教程后，再考虑学习或使用它们也不迟。</p>
+<p>我们也明白向 React 添加新的原生概念的门槛非常高。我们为好奇的读者准备了<a href="https://github.com/reactjs/rfcs/pull/68">详细的征求意见文档</a>，在文档中用更多细节深入讨论了我们推进这件事的动机，也在具体设计决策和相关先进技术上提供了额外的视角。</p>
+<p><strong>最重要的是，Hook 和现有代码可以同时工作，你可以渐进式地使用他们。</strong> 不用急着迁移到 Hook。我们建议避免任何“大规模重写”，尤其是对于现有的、复杂的 class 组件。开始“用 Hook 的方式思考”前，需要做一些思维上的转变。按照我们的经验，最好先在新的不复杂的组件中尝试使用 Hook，并确保团队中的每一位成员都能适应。在你尝试使用 Hook 后，欢迎给我们提供<a href="https://github.com/facebook/react/issues/new">反馈</a>，无论好坏。</p>
+<p>我们准备让 Hook 覆盖所有 class 组件的使用场景，但是**我们将继续为 class 组件提供支持。**在 Facebook，我们有成千上万的组件用 class 书写，我们完全没有重写它们的计划。相反，我们开始在新的代码中同时使用 Hook 和 class。</p>
+<h2 id="faq-frequently-asked-questions">FAQ {#frequently-asked-questions}</h2>
+<p>我们准备了 <a href="/docs/hooks-faq.html">Hooks FAQ</a> 来解答最常见的关于 Hook 的问题。</p>
+<h2 id="%E4%B8%8B%E4%B8%80%E6%AD%A5-next-steps">下一步 {#next-steps}</h2>
+<p>在本章节的最后，你应该对 Hook 能解决什么问题有了粗略的理解，但可能还有许多细节不清楚。不要担心！<strong>让我们去<a href="/docs/hooks-overview.html">下一章节</a>通过例子学习 Hook。</strong></p>
+
+</body>
+</html>
