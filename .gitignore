@@ -14,3 +14,5 @@ resources/sass/.sass-cache/
 *.crt
 *.key
 *.pem
+
+*.DS_Store
