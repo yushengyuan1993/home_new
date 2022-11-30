@@ -553,14 +553,14 @@ ul.icons.major li {
     height: 1.5rem;
 }
 .actions>[title="blog"] {
-    background: url('https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/blogger.png') no-repeat center/100% 100%;
+    background: url('https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/blogger.png') no-repeat center/100% 100%;
 }
 .actions>[title="github"] {
     margin: 0 0.8rem;
-    background: url('https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/github1.png') no-repeat center/100% 100%;
+    background: url('https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/github1.png') no-repeat center/100% 100%;
 }
 .actions>[title="project"] {
-    background: url('https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/project0.png') no-repeat center/100% 100%;
+    background: url('https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/project0.png') no-repeat center/100% 100%;
 }
 .actions a:hover {
     -webkit-transform: scale(1.2);
@@ -794,7 +794,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     position: absolute;
     right: 0;
     top: 0;
-    background: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/close.svg") no-repeat center/35%;
+    background: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/close.svg") no-repeat center/35%;
     transition: all 0.3s ease-in-out;
 }
 #menu .close:hover {
@@ -863,7 +863,7 @@ body.is-menu-visible #menu {
     position: relative;
 }
 #header nav > ul > li > a.menuToggle:after {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/bars.svg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/bars.svg");
     background-position: right center;
     background-repeat: no-repeat;
     content:'';
@@ -876,7 +876,7 @@ body.is-menu-visible #menu {
     width: 3em;
     height: 3em;
     cursor: pointer;
-    background: url('https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/switch.png') no-repeat center/50%;
+    background: url('https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/switch.png') no-repeat center/50%;
     opacity: 0;
     animation: opacity1 2s linear infinite alternate 3s;
 }
@@ -1018,7 +1018,7 @@ body.is-menu-visible #menu {
     height: 55%;
 }
 #banner .more>a:after {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/email.png");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/email.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1113,40 +1113,40 @@ body.is-loading #banner:after {
     }
 }
 #page-wrapper[data-st="1"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/10.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/10.jpeg");
 }
 #page-wrapper[data-st="2"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/11.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/11.jpeg");
 }
 #page-wrapper[data-st="3"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/12.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/12.jpeg");
 }
 #page-wrapper[data-st="4"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/13.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/13.jpeg");
 }
 #page-wrapper[data-st="5"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/14.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/14.jpeg");
 }
 #page-wrapper[data-st="6"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/15.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/15.jpeg");
 }
 #page-wrapper[data-st="7"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/16.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/16.jpeg");
 }
 #page-wrapper[data-st="8"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/17.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/17.jpeg");
 }
 #page-wrapper[data-st="9"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/18.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/18.jpeg");
 }
 #page-wrapper[data-st="10"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/19.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/19.jpeg");
 }
 #page-wrapper[data-st="11"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/20.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/20.jpeg");
 }
 #page-wrapper[data-st="12"] {
-    background-image: url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/21.jpg");
+    background-image: url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/21.jpeg");
 }
 
 .preload-img {
@@ -1154,18 +1154,18 @@ body.is-loading #banner:after {
     top: -1000em;
     left: -1000em;
     background: 
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/10.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/11.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/12.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/13.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/14.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/15.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/16.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/17.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/18.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/19.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/20.jpg") no-repeat center/0%,
-    url("https://yushare.oss-cn-shanghai.aliyuncs.com/home_new/images/21.jpg") no-repeat center/0%;
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/10.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/11.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/12.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/13.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/14.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/15.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/16.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/17.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/18.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/19.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/20.jpeg") no-repeat center/0%,
+    url("https://yushare-1255477364.cos.ap-shanghai.myqcloud.com/home_new/images/21.jpeg") no-repeat center/0%;
 }
 .footer {
     position: fixed;
